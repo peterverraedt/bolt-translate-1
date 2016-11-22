@@ -50,6 +50,14 @@ class LocalizedMenuBuilder extends MenuBuilder
             $item = $this->resolvePathToContent($item);
         }
 
+        // Translate menu
+        if (isset($item['label'])) {
+            $menu[$k]['label'] = Trans::__($item['label']);
+        }
+        if (isset($item['title'])) {
+            $menu[$k]['title'] = Trans::__($item['title']);
+        }
+
         return $item;
     }
    
